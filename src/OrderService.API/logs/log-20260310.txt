@@ -1,0 +1,381 @@
+2026-03-10 09:37:56.384 +00:00 [INF] Start installing Hangfire SQL objects...
+2026-03-10 09:38:14.653 +00:00 [WRN] An exception occurred while trying to perform the migration. Retrying...
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 35 - An internal exception was caught)
+ ---> System.Net.Sockets.SocketException (00000005, 0xFFFDFFFF): Name or service not known
+   at System.Net.Dns.GetHostEntryOrAddressesCore(String hostName, Boolean justAddresses, AddressFamily addressFamily, Nullable`1 startingTimestamp)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress, AddressFamily family)
+   at Microsoft.Data.SqlClient.SNI.SNICommon.GetDnsIpAddresses(String serverName)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.Connect(String serverName, Int32 port, TimeSpan timeout, Boolean isInfiniteTimeout, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle..ctor(String serverName, Int32 port, Int64 timerExpire, Boolean parallel, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo, Boolean tlsFirst, String hostNameInCertificate, String serverCertificateFilename)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 406
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TContext,TResult](DbConnection dedicatedConnection, Func`4 func, TContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 291
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`2 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 268
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 465
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2026-03-10 09:38:15.066 +00:00 [WRN] An exception occurred while trying to perform the migration. Retrying...
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 35 - An internal exception was caught)
+ ---> System.Net.Sockets.SocketException (00000005, 0xFFFDFFFF): Name or service not known
+   at System.Net.Dns.GetHostEntryOrAddressesCore(String hostName, Boolean justAddresses, AddressFamily addressFamily, Nullable`1 startingTimestamp)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress, AddressFamily family)
+   at Microsoft.Data.SqlClient.SNI.SNICommon.GetDnsIpAddresses(String serverName)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.Connect(String serverName, Int32 port, TimeSpan timeout, Boolean isInfiniteTimeout, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle..ctor(String serverName, Int32 port, Int64 timerExpire, Boolean parallel, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo, Boolean tlsFirst, String hostNameInCertificate, String serverCertificateFilename)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 406
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TContext,TResult](DbConnection dedicatedConnection, Func`4 func, TContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 291
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`2 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 268
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 465
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2026-03-10 09:38:15.093 +00:00 [WRN] An exception occurred while trying to perform the migration.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 35 - An internal exception was caught)
+ ---> System.Net.Sockets.SocketException (00000005, 0xFFFDFFFF): Name or service not known
+   at System.Net.Dns.GetHostEntryOrAddressesCore(String hostName, Boolean justAddresses, AddressFamily addressFamily, Nullable`1 startingTimestamp)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress, AddressFamily family)
+   at Microsoft.Data.SqlClient.SNI.SNICommon.GetDnsIpAddresses(String serverName)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.Connect(String serverName, Int32 port, TimeSpan timeout, Boolean isInfiniteTimeout, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle..ctor(String serverName, Int32 port, Int64 timerExpire, Boolean parallel, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo, Boolean tlsFirst, String hostNameInCertificate, String serverCertificateFilename)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 406
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TContext,TResult](DbConnection dedicatedConnection, Func`4 func, TContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 291
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`2 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 268
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 465
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2026-03-10 09:38:15.174 +00:00 [WRN] Was unable to perform the Hangfire schema migration due to an exception. Ignore this message unless you've just installed or upgraded Hangfire.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 35 - An internal exception was caught)
+ ---> System.Net.Sockets.SocketException (00000005, 0xFFFDFFFF): Name or service not known
+   at System.Net.Dns.GetHostEntryOrAddressesCore(String hostName, Boolean justAddresses, AddressFamily addressFamily, Nullable`1 startingTimestamp)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress, AddressFamily family)
+   at Microsoft.Data.SqlClient.SNI.SNICommon.GetDnsIpAddresses(String serverName)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.Connect(String serverName, Int32 port, TimeSpan timeout, Boolean isInfiniteTimeout, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle..ctor(String serverName, Int32 port, Int64 timerExpire, Boolean parallel, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo, Boolean tlsFirst, String hostNameInCertificate, String serverCertificateFilename)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 406
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TContext,TResult](DbConnection dedicatedConnection, Func`4 func, TContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 291
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`2 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 268
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 465
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2026-03-10 09:38:15.185 +00:00 [ERR] Was unable to use the TryAutoDetectSchemaDependentOptions option due to an exception.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 35 - An internal exception was caught)
+ ---> System.Net.Sockets.SocketException (00000005, 0xFFFDFFFF): Name or service not known
+   at System.Net.Dns.GetHostEntryOrAddressesCore(String hostName, Boolean justAddresses, AddressFamily addressFamily, Nullable`1 startingTimestamp)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress, AddressFamily family)
+   at Microsoft.Data.SqlClient.SNI.SNICommon.GetDnsIpAddresses(String serverName)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.Connect(String serverName, Int32 port, TimeSpan timeout, Boolean isInfiniteTimeout, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle..ctor(String serverName, Int32 port, Int64 timerExpire, Boolean parallel, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo, Boolean tlsFirst, String hostNameInCertificate, String serverCertificateFilename)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 406
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TContext,TResult](DbConnection dedicatedConnection, Func`4 func, TContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 291
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TResult](DbConnection dedicatedConnection, Func`3 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 279
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 495
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2026-03-10 09:38:15.864 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+2026-03-10 09:38:15.865 +00:00 [INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-03-10 09:38:16.006 +00:00 [INF] Creating key {268aecac-41eb-472b-9dde-423b22383dfa} with creation date 2026-03-10 09:38:15Z, activation date 2026-03-10 09:38:15Z, and expiration date 2026-06-08 09:38:15Z.
+2026-03-10 09:38:16.118 +00:00 [WRN] No XML encryptor configured. Key {268aecac-41eb-472b-9dde-423b22383dfa} may be persisted to storage in unencrypted form.
+2026-03-10 09:38:16.154 +00:00 [INF] Writing data to file '/root/.aspnet/DataProtection-Keys/key-268aecac-41eb-472b-9dde-423b22383dfa.xml'.
+2026-03-10 09:38:17.546 +00:00 [INF] Now listening on: http://[::]:8080
+2026-03-10 09:38:17.548 +00:00 [INF] Now listening on: https://[::]:8081
+2026-03-10 09:38:17.565 +00:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: sqlserver@OrderDb'
+2026-03-10 09:38:17.566 +00:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-03-10 09:38:17.567 +00:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-03-10 09:38:17.630 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-10 09:38:17.633 +00:00 [INF] Hosting environment: Development
+2026-03-10 09:38:17.633 +00:00 [INF] Content root path: /app
+2026-03-10 09:38:17.890 +00:00 [ERR] Execution BackgroundServerProcess is in the Failed state now due to an exception, execution will be retried in no more than 00:00:15
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 35 - An internal exception was caught)
+ ---> System.Net.Sockets.SocketException (00000005, 0xFFFDFFFF): Name or service not known
+   at System.Net.Dns.GetHostEntryOrAddressesCore(String hostName, Boolean justAddresses, AddressFamily addressFamily, Nullable`1 startingTimestamp)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress, AddressFamily family)
+   at Microsoft.Data.SqlClient.SNI.SNICommon.GetDnsIpAddresses(String serverName)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.Connect(String serverName, Int32 port, TimeSpan timeout, Boolean isInfiniteTimeout, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle..ctor(String serverName, Int32 port, Int64 timerExpire, Boolean parallel, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo, Boolean tlsFirst, String hostNameInCertificate, String serverCertificateFilename)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 406
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TContext,TResult](DbConnection dedicatedConnection, Func`4 func, TContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 291
+   at Hangfire.SqlServer.SqlServerConnection.AnnounceServer(String serverId, ServerContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerConnection.cs:line 512
+   at Hangfire.Server.BackgroundServerProcess.CreateServer(BackgroundServerContext context) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundServerProcess.cs:line 209
+   at Hangfire.Server.BackgroundServerProcess.Execute(Guid executionId, BackgroundExecution execution, CancellationToken stoppingToken, CancellationToken stoppedToken, CancellationToken shutdownToken) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundServerProcess.cs:line 101
+   at Hangfire.Server.BackgroundProcessingServer.RunServer(Guid executionId, Object state) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundProcessingServer.cs:line 249
+   at Hangfire.Processing.BackgroundExecution.Run(Action`2 callback, Object state) in C:\projects\hangfire-525\src\Hangfire.Core\Processing\BackgroundExecution.cs:line 118
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2026-03-10 09:52:17.474 +00:00 [INF] Start installing Hangfire SQL objects...
+2026-03-10 09:52:39.837 +00:00 [INF] Start installing Hangfire SQL objects...
+2026-03-10 09:52:54.284 +00:00 [WRN] An exception occurred while trying to perform the migration. Retrying...
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 35 - An internal exception was caught)
+ ---> System.Net.Sockets.SocketException (00000005, 0xFFFDFFFF): Name or service not known
+   at System.Net.Dns.GetHostEntryOrAddressesCore(String hostName, Boolean justAddresses, AddressFamily addressFamily, Nullable`1 startingTimestamp)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress, AddressFamily family)
+   at Microsoft.Data.SqlClient.SNI.SNICommon.GetDnsIpAddresses(String serverName)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.Connect(String serverName, Int32 port, TimeSpan timeout, Boolean isInfiniteTimeout, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle..ctor(String serverName, Int32 port, Int64 timerExpire, Boolean parallel, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo, Boolean tlsFirst, String hostNameInCertificate, String serverCertificateFilename)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 406
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TContext,TResult](DbConnection dedicatedConnection, Func`4 func, TContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 291
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`2 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 268
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 465
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2026-03-10 09:52:54.751 +00:00 [WRN] An exception occurred while trying to perform the migration. Retrying...
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 35 - An internal exception was caught)
+ ---> System.Net.Sockets.SocketException (00000005, 0xFFFDFFFF): Name or service not known
+   at System.Net.Dns.GetHostEntryOrAddressesCore(String hostName, Boolean justAddresses, AddressFamily addressFamily, Nullable`1 startingTimestamp)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress, AddressFamily family)
+   at Microsoft.Data.SqlClient.SNI.SNICommon.GetDnsIpAddresses(String serverName)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.Connect(String serverName, Int32 port, TimeSpan timeout, Boolean isInfiniteTimeout, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle..ctor(String serverName, Int32 port, Int64 timerExpire, Boolean parallel, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo, Boolean tlsFirst, String hostNameInCertificate, String serverCertificateFilename)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 406
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TContext,TResult](DbConnection dedicatedConnection, Func`4 func, TContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 291
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`2 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 268
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 465
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2026-03-10 09:52:54.753 +00:00 [WRN] An exception occurred while trying to perform the migration.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 35 - An internal exception was caught)
+ ---> System.Net.Sockets.SocketException (00000005, 0xFFFDFFFF): Name or service not known
+   at System.Net.Dns.GetHostEntryOrAddressesCore(String hostName, Boolean justAddresses, AddressFamily addressFamily, Nullable`1 startingTimestamp)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress, AddressFamily family)
+   at Microsoft.Data.SqlClient.SNI.SNICommon.GetDnsIpAddresses(String serverName)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.Connect(String serverName, Int32 port, TimeSpan timeout, Boolean isInfiniteTimeout, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle..ctor(String serverName, Int32 port, Int64 timerExpire, Boolean parallel, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo, Boolean tlsFirst, String hostNameInCertificate, String serverCertificateFilename)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 406
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TContext,TResult](DbConnection dedicatedConnection, Func`4 func, TContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 291
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`2 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 268
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 465
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2026-03-10 09:52:54.754 +00:00 [WRN] Was unable to perform the Hangfire schema migration due to an exception. Ignore this message unless you've just installed or upgraded Hangfire.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 35 - An internal exception was caught)
+ ---> System.Net.Sockets.SocketException (00000005, 0xFFFDFFFF): Name or service not known
+   at System.Net.Dns.GetHostEntryOrAddressesCore(String hostName, Boolean justAddresses, AddressFamily addressFamily, Nullable`1 startingTimestamp)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress, AddressFamily family)
+   at Microsoft.Data.SqlClient.SNI.SNICommon.GetDnsIpAddresses(String serverName)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.Connect(String serverName, Int32 port, TimeSpan timeout, Boolean isInfiniteTimeout, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle..ctor(String serverName, Int32 port, Int64 timerExpire, Boolean parallel, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo, Boolean tlsFirst, String hostNameInCertificate, String serverCertificateFilename)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 406
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TContext,TResult](DbConnection dedicatedConnection, Func`4 func, TContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 291
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`2 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 268
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 465
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2026-03-10 09:52:54.757 +00:00 [ERR] Was unable to use the TryAutoDetectSchemaDependentOptions option due to an exception.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 35 - An internal exception was caught)
+ ---> System.Net.Sockets.SocketException (00000005, 0xFFFDFFFF): Name or service not known
+   at System.Net.Dns.GetHostEntryOrAddressesCore(String hostName, Boolean justAddresses, AddressFamily addressFamily, Nullable`1 startingTimestamp)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress, AddressFamily family)
+   at Microsoft.Data.SqlClient.SNI.SNICommon.GetDnsIpAddresses(String serverName)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.Connect(String serverName, Int32 port, TimeSpan timeout, Boolean isInfiniteTimeout, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle..ctor(String serverName, Int32 port, Int64 timerExpire, Boolean parallel, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo, Boolean tlsFirst, String hostNameInCertificate, String serverCertificateFilename)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 406
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TContext,TResult](DbConnection dedicatedConnection, Func`4 func, TContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 291
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TResult](DbConnection dedicatedConnection, Func`3 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 279
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 495
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2026-03-10 09:52:55.063 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+2026-03-10 09:52:55.064 +00:00 [INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-03-10 09:52:55.919 +00:00 [INF] Now listening on: http://[::]:8080
+2026-03-10 09:52:55.922 +00:00 [INF] Now listening on: https://[::]:8081
+2026-03-10 09:52:55.940 +00:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: sqlserver@OrderDb'
+2026-03-10 09:52:55.941 +00:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-03-10 09:52:55.942 +00:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-03-10 09:52:55.995 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-10 09:52:55.997 +00:00 [INF] Hosting environment: Development
+2026-03-10 09:52:55.997 +00:00 [INF] Content root path: /app
+2026-03-10 09:52:56.091 +00:00 [ERR] Execution BackgroundServerProcess is in the Failed state now due to an exception, execution will be retried in no more than 00:00:15
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 35 - An internal exception was caught)
+ ---> System.Net.Sockets.SocketException (00000005, 0xFFFDFFFF): Name or service not known
+   at System.Net.Dns.GetHostEntryOrAddressesCore(String hostName, Boolean justAddresses, AddressFamily addressFamily, Nullable`1 startingTimestamp)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress, AddressFamily family)
+   at Microsoft.Data.SqlClient.SNI.SNICommon.GetDnsIpAddresses(String serverName)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.Connect(String serverName, Int32 port, TimeSpan timeout, Boolean isInfiniteTimeout, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle..ctor(String serverName, Int32 port, Int64 timerExpire, Boolean parallel, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo, Boolean tlsFirst, String hostNameInCertificate, String serverCertificateFilename)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 406
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TContext,TResult](DbConnection dedicatedConnection, Func`4 func, TContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 291
+   at Hangfire.SqlServer.SqlServerConnection.AnnounceServer(String serverId, ServerContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerConnection.cs:line 512
+   at Hangfire.Server.BackgroundServerProcess.CreateServer(BackgroundServerContext context) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundServerProcess.cs:line 209
+   at Hangfire.Server.BackgroundServerProcess.Execute(Guid executionId, BackgroundExecution execution, CancellationToken stoppingToken, CancellationToken stoppedToken, CancellationToken shutdownToken) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundServerProcess.cs:line 101
+   at Hangfire.Server.BackgroundProcessingServer.RunServer(Guid executionId, Object state) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundProcessingServer.cs:line 249
+   at Hangfire.Processing.BackgroundExecution.Run(Action`2 callback, Object state) in C:\projects\hangfire-525\src\Hangfire.Core\Processing\BackgroundExecution.cs:line 118
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2026-03-10 09:53:29.143 +00:00 [ERR] Execution BackgroundServerProcess is still in the Failed state for 00:00:33.0486172 due to an exception, will be retried in no more than 00:00:15
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 35 - An internal exception was caught)
+ ---> System.Net.Sockets.SocketException (00000005, 0xFFFDFFFF): Name or service not known
+   at System.Net.Dns.GetHostEntryOrAddressesCore(String hostName, Boolean justAddresses, AddressFamily addressFamily, Nullable`1 startingTimestamp)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress, AddressFamily family)
+   at Microsoft.Data.SqlClient.SNI.SNICommon.GetDnsIpAddresses(String serverName)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.Connect(String serverName, Int32 port, TimeSpan timeout, Boolean isInfiniteTimeout, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle..ctor(String serverName, Int32 port, Int64 timerExpire, Boolean parallel, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo, Boolean tlsFirst, String hostNameInCertificate, String serverCertificateFilename)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 406
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TContext,TResult](DbConnection dedicatedConnection, Func`4 func, TContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 291
+   at Hangfire.SqlServer.SqlServerConnection.AnnounceServer(String serverId, ServerContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerConnection.cs:line 512
+   at Hangfire.Server.BackgroundServerProcess.CreateServer(BackgroundServerContext context) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundServerProcess.cs:line 209
+   at Hangfire.Server.BackgroundServerProcess.Execute(Guid executionId, BackgroundExecution execution, CancellationToken stoppingToken, CancellationToken stoppedToken, CancellationToken shutdownToken) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundServerProcess.cs:line 101
+   at Hangfire.Server.BackgroundProcessingServer.RunServer(Guid executionId, Object state) in C:\projects\hangfire-525\src\Hangfire.Core\Server\BackgroundProcessingServer.cs:line 249
+   at Hangfire.Processing.BackgroundExecution.Run(Action`2 callback, Object state) in C:\projects\hangfire-525\src\Hangfire.Core\Processing\BackgroundExecution.cs:line 118
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2026-03-10 10:31:54.334 +00:00 [INF] Start installing Hangfire SQL objects...
+2026-03-10 10:39:18.019 +00:00 [INF] Start installing Hangfire SQL objects...
+2026-03-10 14:06:08.684 +03:00 [INF] Start installing Hangfire SQL objects...
+2026-03-10 14:06:17.928 +03:00 [INF] Hangfire SQL objects installed.
+2026-03-10 14:06:18.171 +03:00 [INF] User profile is available. Using 'C:\Users\merty\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-10 14:06:18.603 +03:00 [INF] Now listening on: https://localhost:7283
+2026-03-10 14:06:18.605 +03:00 [INF] Now listening on: http://localhost:5132
+2026-03-10 14:06:18.804 +03:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: (localdb)\mssqllocaldb@OrderDb'
+2026-03-10 14:06:18.806 +03:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-03-10 14:06:18.808 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-03-10 14:06:18.836 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-10 14:06:18.839 +03:00 [INF] Hosting environment: Development
+2026-03-10 14:06:18.841 +03:00 [INF] Content root path: C:\projects\OrderManagement\src\OrderService.API
+2026-03-10 14:06:18.958 +03:00 [INF] Server mert:15888:b1a137d2 successfully announced in 124,8733 ms
+2026-03-10 14:06:18.965 +03:00 [INF] Server mert:15888:b1a137d2 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-03-10 14:06:19.003 +03:00 [INF] 1 servers were removed due to timeout
+2026-03-10 14:06:19.103 +03:00 [INF] Server mert:15888:b1a137d2 all the dispatchers started
+2026-03-10 14:06:20.047 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7283/swagger/index.html - null null
+2026-03-10 14:06:20.319 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7283/swagger/index.html - 200 null text/html;charset=utf-8 281.714ms
+2026-03-10 14:06:20.389 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7283/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-10 14:06:20.397 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7283/_vs/browserLink - null null
+2026-03-10 14:06:20.412 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7283/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 23.0249ms
+2026-03-10 14:06:20.520 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7283/_vs/browserLink - 200 null text/javascript; charset=UTF-8 124.3157ms
+2026-03-10 14:06:20.590 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7283/swagger/v1/swagger.json - null null
+2026-03-10 14:06:20.622 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7283/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 32.5739ms
+2026-03-10 14:06:20.650 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7283/swagger/favicon-32x32.png - null null
+2026-03-10 14:06:20.671 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-03-10 14:06:20.674 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7283/swagger/favicon-32x32.png - 200 628 image/png 23.9826ms

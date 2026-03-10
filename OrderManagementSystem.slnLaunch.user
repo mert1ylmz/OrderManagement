@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Yeni Profil",
+    "Projects": [
+      {
+        "Path": "src\\OrderService.API\\OrderService.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "src\\ReportingService.API\\ReportingService.API.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+C:\projects\OrderManagement\src\OrderService.Domain\bin\Debug\net8.0\OrderService.Domain.deps.json
+C:\projects\OrderManagement\src\OrderService.Domain\bin\Debug\net8.0\OrderService.Domain.dll
+C:\projects\OrderManagement\src\OrderService.Domain\bin\Debug\net8.0\OrderService.Domain.pdb
+C:\projects\OrderManagement\src\OrderService.Domain\obj\Debug\net8.0\OrderService.Domain.csproj.AssemblyReference.cache
+C:\projects\OrderManagement\src\OrderService.Domain\obj\Debug\net8.0\OrderService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\OrderManagement\src\OrderService.Domain\obj\Debug\net8.0\OrderService.Domain.AssemblyInfoInputs.cache
+C:\projects\OrderManagement\src\OrderService.Domain\obj\Debug\net8.0\OrderService.Domain.AssemblyInfo.cs
+C:\projects\OrderManagement\src\OrderService.Domain\obj\Debug\net8.0\OrderService.Domain.csproj.CoreCompileInputs.cache
+C:\projects\OrderManagement\src\OrderService.Domain\obj\Debug\net8.0\OrderService.Domain.dll
+C:\projects\OrderManagement\src\OrderService.Domain\obj\Debug\net8.0\refint\OrderService.Domain.dll
+C:\projects\OrderManagement\src\OrderService.Domain\obj\Debug\net8.0\OrderService.Domain.pdb
+C:\projects\OrderManagement\src\OrderService.Domain\obj\Debug\net8.0\ref\OrderService.Domain.dll

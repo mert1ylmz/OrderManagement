@@ -1,0 +1,119 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\projects\\OrderManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6F6B288B-D0A4-4AAD-A9A1-37C683055F80}|src\\ReportingService.API\\ReportingService.API.csproj|c:\\projects\\ordermanagement\\src\\reportingservice.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6F6B288B-D0A4-4AAD-A9A1-37C683055F80}|src\\ReportingService.API\\ReportingService.API.csproj|solutionrelative:src\\reportingservice.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D7BE1B2-F691-27DA-525B-3C5BF04D1E08}|src\\OrderService.API\\OrderService.API.csproj|c:\\projects\\ordermanagement\\src\\orderservice.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D7BE1B2-F691-27DA-525B-3C5BF04D1E08}|src\\OrderService.API\\OrderService.API.csproj|solutionrelative:src\\orderservice.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D7BE1B2-F691-27DA-525B-3C5BF04D1E08}|src\\OrderService.API\\OrderService.API.csproj|c:\\projects\\ordermanagement\\src\\orderservice.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2D7BE1B2-F691-27DA-525B-3C5BF04D1E08}|src\\OrderService.API\\OrderService.API.csproj|solutionrelative:src\\orderservice.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F6B288B-D0A4-4AAD-A9A1-37C683055F80}|src\\ReportingService.API\\ReportingService.API.csproj|c:\\projects\\ordermanagement\\src\\reportingservice.api\\reportingservice.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6F6B288B-D0A4-4AAD-A9A1-37C683055F80}|src\\ReportingService.API\\ReportingService.API.csproj|solutionrelative:src\\reportingservice.api\\reportingservice.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\merty\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\build\\Container.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D7BE1B2-F691-27DA-525B-3C5BF04D1E08}|src\\OrderService.API\\OrderService.API.csproj|c:\\projects\\ordermanagement\\src\\orderservice.api\\orderservice.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2D7BE1B2-F691-27DA-525B-3C5BF04D1E08}|src\\OrderService.API\\OrderService.API.csproj|solutionrelative:src\\orderservice.api\\orderservice.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\projects\\OrderManagement\\src\\ReportingService.API\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\ReportingService.API\\appsettings.json",
+              "ToolTip": "C:\\projects\\OrderManagement\\src\\ReportingService.API\\appsettings.json*",
+              "RelativeToolTip": "src\\ReportingService.API\\appsettings.json*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-10T11:04:05.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\projects\\OrderManagement\\src\\OrderService.API\\Program.cs",
+              "RelativeDocumentMoniker": "src\\OrderService.API\\Program.cs",
+              "ToolTip": "C:\\projects\\OrderManagement\\src\\OrderService.API\\Program.cs",
+              "RelativeToolTip": "src\\OrderService.API\\Program.cs",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAcwK8AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T11:03:08.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\projects\\OrderManagement\\src\\OrderService.API\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\OrderService.API\\appsettings.json",
+              "ToolTip": "C:\\projects\\OrderManagement\\src\\OrderService.API\\appsettings.json*",
+              "RelativeToolTip": "src\\OrderService.API\\appsettings.json*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-10T11:02:50.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReportingService.API.csproj",
+              "DocumentMoniker": "C:\\projects\\OrderManagement\\src\\ReportingService.API\\ReportingService.API.csproj",
+              "RelativeDocumentMoniker": "src\\ReportingService.API\\ReportingService.API.csproj",
+              "ToolTip": "C:\\projects\\OrderManagement\\src\\ReportingService.API\\ReportingService.API.csproj",
+              "RelativeToolTip": "src\\ReportingService.API\\ReportingService.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-10T10:53:02.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Container.targets",
+              "DocumentMoniker": "C:\\Users\\merty\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\build\\Container.targets",
+              "RelativeDocumentMoniker": "..\\..\\Users\\merty\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\build\\Container.targets",
+              "ToolTip": "C:\\Users\\merty\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\build\\Container.targets",
+              "RelativeToolTip": "..\\..\\Users\\merty\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\build\\Container.targets",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-03-10T10:50:46.658Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrderService.API.csproj",
+              "DocumentMoniker": "C:\\projects\\OrderManagement\\src\\OrderService.API\\OrderService.API.csproj",
+              "RelativeDocumentMoniker": "src\\OrderService.API\\OrderService.API.csproj",
+              "ToolTip": "C:\\projects\\OrderManagement\\src\\OrderService.API\\OrderService.API.csproj",
+              "RelativeToolTip": "src\\OrderService.API\\OrderService.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-10T10:46:53.954Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
